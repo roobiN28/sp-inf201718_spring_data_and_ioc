@@ -4,11 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="personService" class="com.cgm.academy.service.PersonService"/>
-
-    <bean id="personController" class="com.cgm.academy.controller.PersonController">
-        <constructor-arg value="9"/>
-        <property name="personService" ref="personService"/>
+    <bean id="personService" class="com.cgm.academy.person.service.PersonService">
+        <property name="personRepository" ref="personRepository"/>
+    </bean>
+    <bean id="personController" class="com.cgm.academy.person.controller.PersonController">
+        <constructor-arg ref="personService"/>
     </bean>
 
 </beans>
