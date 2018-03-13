@@ -7,8 +7,10 @@
     <bean id="personService" class="com.cgm.academy.person.service.PersonService">
         <property name="personRepository" ref="personRepository"/>
     </bean>
-    <bean id="personController" class="com.cgm.academy.person.controller.PersonController">
-        <constructor-arg ref="personService"/>
+
+    <bean id="personController" class="com.cgm.academy.controller.PersonController">
+        <constructor-arg value="9"/>
+        <property name="personService" ref="personService"/>
     </bean>
 
 </beans>

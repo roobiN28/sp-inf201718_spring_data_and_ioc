@@ -10,9 +10,18 @@ import java.util.List;
 public class PersonController {
 
     private PersonService personService;
-    // wstrzykiwanie przez konstruktor
-    public PersonController(PersonService personService) {
+    private Integer value = 0;
+
+    // wstrzykiwanie przez setter
+    public void setPersonService(PersonService personService) {
         this.personService = personService;
+    }
+
+    // wstrzykiwanie przez konstruktor
+    public PersonController(Integer value) {
+        System.out.println("Inicjalizacja PersonController");
+        this.value=value;
+        System.out.println("Wstrzyknieta wartosc value = " + this.value);
     }
 
     public void savePerson(Person person){
